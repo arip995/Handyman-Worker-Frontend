@@ -1,6 +1,9 @@
-<div class="p-8 w-full flex flex-col items-center">
+<div class="p-8 w-full flex flex-col justify-center items-center content-center">
     <div class="w-full lg:w-3/12">
         <form class="border-solid border-2 border-black-900 px-4 py-4" [formGroup]="signUpForm">
+            <div style="font-family: Arial;font-style: normal;font-weight: normal;font-size: 36px;line-height: 48px;letter-spacing: 0.2px;color: #0A2540;" class="mb-4">
+                Sign Up
+            </div>
             <div>
                 <mat-form-field class="w-full" appearance="outline">
                     <mat-label>Name</mat-label>
@@ -19,25 +22,27 @@
                 <mat-form-field class="w-full" appearance="outline" >
                     <mat-label>Username</mat-label>
                     <input required matInput type="text" [formControlName]="'username'">
-                    <mat-error *ngIf="checkError('required')">Required</mat-error>
+                    <mat-error *ngIf="checkError('minLength') || checkError('maxLength')">Username must have 6 to 10 characters</mat-error>
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field class="w-full" appearance="outline" >
                     <mat-label>Password</mat-label>
-                    <input required matInput type="password" [formControlName]="'password'">
+                    <input [(ngModel)]="password" required matInput type="password" [formControlName]="'password'">
                     <mat-error *ngIf="checkError('required')">Required</mat-error>
+                    <mat-hint class="text-red-600" *ngIf="passwordMatch">Password should match</mat-hint>
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field class="w-full" appearance="outline" >
                     <mat-label>Confirm Password</mat-label>
-                    <input required matInput type="password" [formControlName]="'confirmPassword'">
+                    <input [(ngModel)]="confirmPassword" required matInput type="password" [formControlName]="'confirmPassword'">
                     <mat-error *ngIf="checkError('required')">Required</mat-error>
+                    <mat-hint class="text-red-600" *ngIf="passwordMatch">Password should match</mat-hint>
                 </mat-form-field>
             </div>
             <div>
-                <button mat-raised-button class="w-full" color="primary">Submit</button>
+                <button (click)="submit()" mat-raised-button class="w-full" color="primary">Submit</button>
             </div>
             <div class="mt-4 text-indigo-600 cursor-pointer"> Already have an account? Sign In.</div>
         </form>
