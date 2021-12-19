@@ -8,14 +8,14 @@ const routes: Routes = [
   {
     path       : '',
     pathMatch  : 'full',
-    redirectTo : '/sign-up',
+    redirectTo : '/worker/sign-up',
     data       : {title: 'Sign-up'}
 },{
-  path       : 'sign-up',
+  path       : 'worker/sign-up',
   pathMatch  : 'full',
   component  : SignUpComponent,
 },{
-  path       : 'sign-in',
+  path       : 'worker/sign-in',
   pathMatch  : 'full',
   component  : SignInComponent,
 }
