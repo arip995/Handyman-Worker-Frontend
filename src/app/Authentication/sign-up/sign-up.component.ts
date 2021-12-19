@@ -45,7 +45,7 @@ checkError(errorName:any){
   }
 
 
-  submit(){
+  signUp(){
     if(this.password !== this.confirmPassword){
       this.passwordMatch = true;
       return;

@@ -9,11 +9,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { SignUpComponent } from './Authentication/sign-up/sign-up.component';
 import { MatButtonModule } from '@angular/material/button';
-
+import { SignInComponent } from './Authentication/sign-in/sign-in.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SignUpComponent
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
