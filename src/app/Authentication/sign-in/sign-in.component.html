@@ -1,6 +1,6 @@
-<div class="p-8 w-full flex flex-col h-screen justify-center items-center content-center">
-    <div class="w-full xl:w-3/12">
-        <form class="border-solid border-2 border-black-900 px-4 py-4" [formGroup]="signInForm">
+<div class="bg-blue-50 p-8 w-full flex flex-col h-screen justify-center items-center content-center">
+    <div class="w-full lg:w-3/12">
+        <form class="bg-white border-solid border-2 border-black-900 px-4 py-4" [formGroup]="signInForm">
             <div style="font-family: Arial;font-style: normal;font-weight: normal;font-size: 36px;line-height: 48px;letter-spacing: 0.2px;color: #0A2540;" class="mb-4">
                 Sign In
             </div>
@@ -21,7 +21,7 @@
             <div>
                 <button (click)="signIn()" mat-raised-button class="w-full" color="primary">Sign In</button>
             </div>
-            <div [routerLink]="['../../worker/sign-up']" class="mt-4 text-indigo-600 cursor-pointer">Create an account. Sign Up.</div>
+            <div [routerLink]="['../sign-up']" class="mt-4 text-indigo-600 cursor-pointer">Create an account. Sign Up.</div>
         </form>
     </div>
 </div>
