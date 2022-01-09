@@ -4,13 +4,30 @@
             <div style="font-family: Arial;font-style: normal;font-weight: normal;font-size: 36px;line-height: 48px;letter-spacing: 0.2px;color: #0A2540;" class="mb-4">
                 Sign Up
             </div>
-            <div>
-                <mat-form-field class="w-full" appearance="outline">
-                    <mat-label>Name</mat-label>
-                    <input required matInput type="text" [formControlName]="'name'">
-                <mat-error *ngIf="checkError('required')">Required</mat-error>
-                </mat-form-field>
+            <!-- Name -->
+            <div class="grid grid-cols-2 gap-4">
+                <!-- First Name -->
+                <div>
+                    <mat-form-field class="w-full" appearance="outline">
+                    <mat-label >First Name</mat-label>
+                        <input required matInput type="text" [formControlName]="'firstname'">
+                    <mat-error *ngIf="checkError('required')">Required</mat-error>
+                    </mat-form-field>
+                </div>
+                    
+
+
+                <!-- Last Name -->
+                <div>
+                    <mat-form-field class="w-full" appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                        <input required matInput type="text" [formControlName]="'lastname'">
+                    <mat-error *ngIf="checkError('required')">Required</mat-error>
+                    </mat-form-field>
+                </div>
             </div>
+
+
             <div>
                 <mat-form-field class="w-full" appearance="outline" >
                     <mat-label>Mobile Number</mat-label>
@@ -18,11 +35,12 @@
                     <mat-error *ngIf="checkError('min')">Enter a valid Mobile Number</mat-error>
                 </mat-form-field>
             </div>
+            
             <div>
                 <mat-form-field class="w-full" appearance="outline" >
                     <mat-label>Service</mat-label>
                     <mat-select required [formControlName]="'service'">
-                            <mat-option *ngFor="let service of type" [value]="service.id">
+                            <mat-option *ngFor="let service of type" [value]="service.value">
                                 {{service.value}}
                             </mat-option>
                     </mat-select>
